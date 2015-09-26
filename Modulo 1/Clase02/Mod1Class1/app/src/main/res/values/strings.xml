@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Modulo 1 Clase 1</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <!--
+    string-es
+        app_name Hola
+    string-en
+        app_name Hello
+
+        R.string.app_name
+    -->
+</resources>

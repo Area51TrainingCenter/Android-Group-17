@@ -1,0 +1,15 @@
+px - pixel
+dp - densidad por pixel
+
+mdpi - 1px - 1dp
+hdpi - 1px - 2dp
+xhdpi - 1px - 3dp
+xxhdpi - 1px - 4dp
+xxxhdpi - 1px - 5dp
+
+
+mdpi - 48*48
+hdpi - 72*72
+xhdpi - 96*96
+xxhdpi - 144*144
+xxxhdpi - 192*192
