@@ -1,0 +1,95 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/llMostrar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height"
+            android:layout_weight="1"
+            android:background="@color/rojo"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mostrar" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="@dimen/uno"
+            android:layout_height="@dimen/height"
+            android:background="@color/negro" />
+
+        <LinearLayout
+            android:id="@+id/llOcultar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height"
+            android:layout_weight="1"
+            android:background="@color/rojo"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ocultar" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llFormulario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/txtNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/ingrese_nombre"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/btnEjecutar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/azul"
+            android:text="@string/ejecutar"
+            android:textColor="@color/blanco" />
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/spBebidas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></Spinner>
+    <!--
+        android:entries="@array/bebidas"
+        -->
+
+    <Button
+        android:id="@+id/btnMotrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/mostrar" />
+
+    <TextView
+        android:id="@+id/lblTexto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal" />
+
+</LinearLayout>
