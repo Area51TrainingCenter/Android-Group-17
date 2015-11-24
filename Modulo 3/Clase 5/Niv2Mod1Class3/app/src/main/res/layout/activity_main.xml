@@ -17,6 +17,13 @@
         android:layout_gravity="center_horizontal"
         android:text="Obtener" />
 
+    <Button
+        android:id="@+id/btnVerMapa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Ver Mapa" />
+
     <ListView
         android:id="@+id/lvLista"
         android:layout_width="match_parent"
