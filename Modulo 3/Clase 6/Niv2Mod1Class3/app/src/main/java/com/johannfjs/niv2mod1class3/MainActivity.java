@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.android.volley.Request;
@@ -29,6 +30,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     private Button btnObtener, btnVerMapa;
     private ListView lvLista;
+    private LinearLayout llLista, llCargando;
     private ListaAdapter adapter;
     public static ArrayList<Persona> lista = new ArrayList<>();
 
@@ -39,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
         btnObtener = (Button) findViewById(R.id.btnObtener);
         btnVerMapa = (Button) findViewById(R.id.btnVerMapa);
         lvLista = (ListView) findViewById(R.id.lvLista);
+
+        llLista = (LinearLayout) findViewById(R.id.llLista);
+        llCargando = (LinearLayout) findViewById(R.id.llCargando);
     }
 
     @Override
@@ -54,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         btnObtener.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                llCargando.setVisibility(View.VISIBLE);
 
                 try {
                     GPSTracker gpsTracker = new GPSTracker(MainActivity.this);
@@ -117,6 +123,9 @@ public class MainActivity extends AppCompatActivity {
                                         }
                                         adapter = new ListaAdapter(getApplicationContext(), lista);
                                         lvLista.setAdapter(adapter);
+
+                                        llCargando.setVisibility(View.GONE);
+                                        lvLista.setVisibility(View.VISIBLE);
                                     } catch (Exception e) {
                                         Log.d("TAG", "error");
                                     }
@@ -142,6 +151,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, MapasActivity.class);
                 intent.putExtra("latitud", lista.get(position).getLatitud());
                 intent.putExtra("longitud", lista.get(position).getLongitud());
+                intent.putExtra("posicion", position);
                 startActivity(intent);
             }
         });
